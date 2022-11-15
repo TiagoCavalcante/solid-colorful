@@ -1,15 +1,12 @@
 <div align="center">
-  <a href="https://TiagoCavalcante.github.io/solid-colorful">
-    <img src="demo/src/assets/design.png" width="229" height="233" alt="solid-colorful" />
+  <a href="https://github.com/TiagoCavalcante/">
+    <h1>solid-colorful</h1>
   </a>
 </div>
 
 <div align="center">
   <a href="https://npmjs.org/package/@tiagotrindade/solid-colorful">
     <img alt="npm" src="https://img.shields.io/npm/v/@tiagotrindade/solid-colorful.svg?labelColor=da248d&color=6ead0a" />
-  </a>
-  <a href="https://github.com/TiagoCavalcante/solid-colorful/actions">
-    <img alt="minziped-size" src="https://badgen.net/bundlephobia/minzip/@tiagotrindade/solid-colorful?labelColor=da248d&color=6ead0a" />
   </a>
   <a href="https://bundlephobia.com/result?p=@tiagotrindade/solid-colorful">
     <img alt="tree-shakeable" src="https://badgen.net/bundlephobia/tree-shaking/@tiagotrindade/solid-colorful?labelColor=da248d&color=6ead0a" />
