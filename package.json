@@ -1,0 +1,175 @@
+{
+  "name": "@tiagotrindade/solid-colorful",
+  "version": "1.0.2",
+  "description": "🎨 A tiny (2,8 KB) color picker component for SolidJS apps. Fast, well-tested, dependency-free, mobile-friendly and accessible",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "esmodule": "dist/index.esmodule.js",
+  "umd:main": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./dist/index.module.js",
+      "umd": "./dist/index.umd.js",
+      "import": "./dist/index.module.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.module.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.{ts,tsx} demo/src/**/*.{ts,tsx}",
+    "size": "npm run build && size-limit",
+    "check-types": "tsc --noEmit true",
+    "build": "del-cli 'dist/*' && microbundle build --entry src/index.ts --name solid-colorful --css inline --tsconfig tsconfig.build.json",
+    "postbuild": "cpy dist/index.module.js dist --rename=index.mjs && cpy dist/index.module.js.map dist --rename=index.mjs.map",
+    "prepublishOnly": "npm run build",
+    "check-release": "npm publish --dry-run",
+    "release": "npm publish",
+    "start-demo": "parcel demo/src/index.html --out-dir demo/dist --open",
+    "build-demo": "del-cli 'demo/dist/*' && parcel build demo/src/index.html --out-dir demo/dist --public-url https://TiagoCavalcante.github.io/solid-colorful/",
+    "deploy-demo": "npm run build-demo && gh-pages -d demo/dist"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.module.js",
+      "name": "HexColorPicker",
+      "import": "{ HexColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HslColorPicker",
+      "import": "{ HslColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HslaColorPicker",
+      "import": "{ HslaColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HslStringColorPicker",
+      "import": "{ HslStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HslaStringColorPicker",
+      "import": "{ HslaStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HsvColorPicker",
+      "import": "{ HsvColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HsvaColorPicker",
+      "import": "{ HsvaColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HsvStringColorPicker",
+      "import": "{ HsvStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HsvaStringColorPicker",
+      "import": "{ HsvaStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "RgbColorPicker",
+      "import": "{ RgbColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "RgbaColorPicker",
+      "import": "{ RgbaColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "RgbStringColorPicker",
+      "import": "{ RgbStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "RgbaStringColorPicker",
+      "import": "{ RgbaStringColorPicker }",
+      "limit": "3 KB"
+    },
+    {
+      "path": "dist/index.module.js",
+      "name": "HexColorInput",
+      "import": "{ HexColorInput }",
+      "limit": "3 KB"
+    }
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist/*.{js,mjs,ts,map}",
+    "dist/components/*.ts",
+    "dist/utils/nonce.d.ts",
+    "LICENSE",
+    "ACKNOWLEDGMENTS",
+    "README.md",
+    "package.json"
+  ],
+  "repository": "https://github.com/TiagoCavalcante/solid-colorful",
+  "keywords": [
+    "solidjs",
+    "color picker",
+    "colorpicker",
+    "tiny",
+    "hex",
+    "color",
+    "front-end",
+    "color-picker",
+    "accessible",
+    "accessibility",
+    "aria",
+    "a11y",
+    "wai-aria"
+  ],
+  "author": "Tiago Cavalcante <tiagotrindade111@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TiagoCavalcante/solid-colorful/issues"
+  },
+  "homepage": "https://TiagoCavalcante.github.io/solid-colorful",
+  "peerDependencies": {
+    "solid-js": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "babel-preset-solid": "^1.4.6",
+    "cpy-cli": "^4.1.0",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^4.0.0",
+    "microbundle": "0.15.0",
+    "parcel": "^2.6.2",
+    "parcel-plugin-css-to-string": "^2.5.5",
+    "prettier": "^2.7.1",
+    "size-limit": "^7.0.8",
+    "solid-js": "^1.4.7",
+    "solid-styled-components": "^0.28.4",
+    "typescript": "^4.7.4"
+  }
+}
